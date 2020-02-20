@@ -10,7 +10,7 @@ LABEL "homepage"="http://github.com/UnicornGlobal/has-changes-action"
 
 RUN apk add --no-cache git bash
 
-ADD command.sh /
-RUN chmod +x /command.sh
+ADD has-changes.sh /
+RUN chmod +x /has-changes.sh
 
-ENTRYPOINT ["/command.sh"]
+ENTRYPOINT ["/has-changes.sh"]
