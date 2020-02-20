@@ -1,4 +1,4 @@
-FROM alpine:git
+FROM alpine/git
 
 LABEL "repository"="http://github.com/UnicornGlobal/has-changes-action"
 LABEL "homepage"="http://github.com/UnicornGlobal/has-changes-action"
