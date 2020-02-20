@@ -4,9 +4,9 @@ set -e
 function check() {
   if [[ -z "$(git status --porcelain)" ]];
   then
-    return 0
-  else
     return 1
+  else
+    return 0
   fi
 }
 
