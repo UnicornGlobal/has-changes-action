@@ -4,10 +4,10 @@ set -e
 function check() {
   if [[ -z "$(git status --porcelain)" ]];
   then
-    return 1
+    echo "0"
   else
-    return 0
+    echo "1"
   fi
 }
 
-$(check)
+echo $(check)
