@@ -1,5 +1,7 @@
 name: "Has Changes"
 description: "Check if a git repository has uncommitted changes"
+icon: info
+color: yellow
 outputs:
   changes:
     description: "Whether or not there are uncommitted changes in the folder"
