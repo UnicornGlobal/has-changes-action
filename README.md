@@ -33,7 +33,7 @@ jobs:
     # This step will evaluate the repo status and report the change
     - name: Check if there are changes
       id: changes
-      uses: UnicornGlobal/has-changes-action@v1.0.10
+      uses: UnicornGlobal/has-changes-action@v1.0.11
     # You can now access a variable indicating if there have been changes
     - name: Process changes
       if: steps.changes.outputs.changed == 1
