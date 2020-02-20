@@ -4,7 +4,7 @@ branding:
   icon: "info"
   color: "yellow"
 outputs:
-  changes:
+  changed:
     description: "Whether or not there are uncommitted changes in the folder"
 runs:
   using: "docker"
