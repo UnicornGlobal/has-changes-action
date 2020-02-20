@@ -10,4 +10,4 @@ function check() {
   fi
 }
 
-echo $(check)
+echo ::set-output name=changed::$(check)
