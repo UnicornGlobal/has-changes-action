@@ -6,4 +6,4 @@ LABEL "homepage"="http://github.com/UnicornGlobal/has-changes-action"
 ADD entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["sh", "/entrypoint.sh"]
