@@ -1,8 +1,10 @@
 #!/bin/bash
 set -e
 
+echo "git status --porcelain $1 $2"
+
 function check() {
-  if [[ -z "$(git status --porcelain)" ]];
+  if [[ -z "$(git status --porcelain $1 $2)" ]];
   then
     echo "0"
   else

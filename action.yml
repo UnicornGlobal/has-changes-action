@@ -3,9 +3,19 @@ description: "Check if a git repository has uncommitted changes"
 branding:
   icon: "info"
   color: "yellow"
+inputs:
+  status-args:
+    description: "Arguments to the `git status` command."
+    default: ""
+  pathspec:
+    description: "Pattern used to limit paths in the `git status` command."
+    default: ""
 outputs:
   changed:
-    description: "Whether or not there are uncommitted changes in the folder"
+    description: "Whether or not there are uncommitted changes in the pathspec"
 runs:
   using: "docker"
   image: "Dockerfile"
+  args: 
+    - ${{ inputs.status-args }}
+    - ${{ inputs.pathspec }}
