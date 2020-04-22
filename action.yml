@@ -6,9 +6,11 @@ branding:
 inputs:
   status-args:
     description: "Arguments to the `git status` command."
+    required: false
     default: ""
   pathspec:
     description: "Pattern used to limit paths in the `git status` command."
+    required: false
     default: ""
 outputs:
   changed:
