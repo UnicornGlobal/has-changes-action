@@ -1,10 +1,11 @@
 #!/bin/bash
 set -e
 
-echo "git status --porcelain $1 $2"
+STATUS_ARGS=$1
+PATHSPEC=$2
 
 function check() {
-  if [[ -z "$(git status --porcelain $1 $2)" ]];
+  if [[ -z "$(git status --porcelain $STATUS_ARGS $PATHSPEC)" ]];
   then
     echo "0"
   else
