@@ -1,16 +1,29 @@
 #!/bin/bash
-set -e
 
 STATUS_ARGS=$1
 PATHSPEC=$2
 
 function check() {
-  if [[ -z "$(git status --porcelain $STATUS_ARGS $PATHSPEC)" ]];
+  set -e
+  output=$(git status --porcelain $STATUS_ARGS $PATHSPEC)
+  set +e
+
+  echo "$output"
+  if [[ -z "$output" ]];
   then
-    echo "0"
+    return 0
   else
-    echo "1"
+    return 1
   fi
 }
 
-echo ::set-output name=changed::$(check)
+changes=$(check)
+changed=$?
+
+# Escape result
+changes="${changes//'%'/'%25'}"
+changes="${changes//$'\n'/'%0A'}"
+changes="${changes//$'\r'/'%0D'}"
+
+echo ::set-output name=changed::$changed
+echo ::set-output name=changes::$changes
