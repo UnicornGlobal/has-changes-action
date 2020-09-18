@@ -17,6 +17,8 @@ You do this by checking if `changed` is equal to `1`.
 
 The value will be 0 if no code has been changed by any previous steps.
 
+You can print list of all changes by printing `changes` variable in the step. 
+
 ## Example
 
 ```yaml
@@ -38,6 +40,8 @@ jobs:
     - name: Process changes
       if: steps.changes.outputs.changed == 1
       run: echo "Changes exist"
+    # You can print list of changes if needed
+    # run: echo "Changes exist: " && echo "${{ steps.changes.outputs.changes }}"
 ```
 
 The example shows that adding a step to check the status will expose the
