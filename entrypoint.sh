@@ -5,6 +5,8 @@ STATUS_ARGS=$1
 PATHSPEC=$2
 
 function check() {
+  git config --global --add safe.directory /github/workspace;
+  
   if [[ -z "$(git status --porcelain $STATUS_ARGS $PATHSPEC)" ]];
   then
     echo "0"
